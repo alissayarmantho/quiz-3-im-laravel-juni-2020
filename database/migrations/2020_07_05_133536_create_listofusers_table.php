@@ -14,7 +14,8 @@ class CreateListofusersTable extends Migration
     public function up()
     {
         Schema::create('listofusers', function (Blueprint $table) {
-            $table->bigIncrements('id') -> primary();
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('users_id');
             $table->foreign('users_id') -> references('id') -> on ('users');
         });
     }
