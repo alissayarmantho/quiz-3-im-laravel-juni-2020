@@ -14,7 +14,7 @@ class CreateFollowpairTable extends Migration
     public function up()
     {
         Schema::create('followpair', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id') -> primary();
               $table->foreign('listofuser_id_for_the_followed') -> references('id') -> on ('listofusers');
               $table->foreign('users_id_of_the_one_following') -> references('id') -> on ('users');
         });
